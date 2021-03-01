@@ -25,7 +25,7 @@ class VigenereCipheringMachine {
   }
 
   encrypt(message, key) {
-    if (!message || !key) {
+    if (message === undefined || key === undefined) {
       throw new Error ('Error');
     } else {
       let keyArr = this.preparation(message, key),
@@ -46,7 +46,7 @@ class VigenereCipheringMachine {
   } 
 
   decrypt(encryptedMessage, key) {
-    if (!encryptedMessage || key) {
+    if (encryptedMessage === undefined || key === undefined) {
       throw new Error ('Error');
     } else {
       let keyArr = this.preparation(encryptedMessage, key),
